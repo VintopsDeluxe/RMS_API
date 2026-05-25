@@ -1,0 +1,11 @@
+#Dependency folders (keeps your repository light)
+node_modules/
+
+# Secrets and environment variables (CRITICAL)
+.env
+
+# Local logs and debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
