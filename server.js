@@ -16,6 +16,14 @@ app.use(express.json());
 // Main Modular Route Linkage
 app.use('/api/v1', siteRoutes);
 
+// A simple welcoming route for the root URL
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: "Welcome to the RMS Core Infrastructure API!",
+    status: "Healthy & Online"
+  });
+});
+
 // AUTOMATED CRON JOB: Scan for Lost Communication every 5 minutes
 cron.schedule('*/5 * * * *', async () => {
   console.log("Running background automated communication health check...");
